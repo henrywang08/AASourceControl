@@ -43,7 +43,8 @@ workflow Invoke-RunbookUsingAlerts
         Select-AzureSubscription -subscriptionName "Windows Azure MSDN - Visual Studio Ultimate" 
  		
 		# Find Cloud Service Name of the VM
-		$VMService = Find-AzureRMResource -ResourceType "Microsoft.ClassicCompute/domainNames" -ResourceGroupName $AlertContext.resourceGroupName 
+		# $VMService = Find-AzureRMResource -ResourceType "Microsoft.ClassicCompute/domainNames" -ResourceGroupName $AlertContext.resourceGroupName 
+ 		$VMService = @{Name='ContosoTestBox-7711sh20'}
  
         #Check the status property of the VM
         Write-Output "Status of VM before taking action"
